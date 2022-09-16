@@ -18,8 +18,6 @@ name: Continuous Integration
 # Don't need to run on push to master/main
 on:
   push:
-    branches-ignore:
-      - 'main'
 
 ###############
 # Set the Job #
