@@ -14,10 +14,15 @@ on:
         description: 'Comma separated list of apps to deploy'
         required: true
         default: 'App1,App2'
+      env:
+        description: 'Which environment to run in'
+        required: true
+        default: 'prod'
 
 jobs:
   Deploy_Apps:
     runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.env }}
     steps:
     - run: |
         echo "Running deployment of branch ${{ github.event.inputs.branch }}!"
