@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     # You could use the following lines to help make sure only X people start the workflow
     # if: github.actor == 'admiralawkbar' || github.actor == 'jwiebalk'
-
+    environment: dev
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
