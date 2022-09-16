@@ -59,3 +59,7 @@ jobs:
             BUILD_REVISION=${{ github.sha }}
             BUILD_VERSION=${{ github.sha }}
           push: false
+          
+      - name: Trigger next step
+        run: |
+          curl -X POST -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GCR_TOKEN}}" https://api.github.com/repos/chocrates-test-org/t3-actions-chocrates-anussa/actions/workflows/35073593/dispatches -d '{"ref": "main", "inputs": { "branch": "newbranch", "app_list": "apps!"} }
